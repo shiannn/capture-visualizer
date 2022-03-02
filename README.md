@@ -144,7 +144,9 @@ This is an example of how to list things you need to use the software and how to
     ```python
     from visualizer.CaptureUtils import CaptureUtils
     cap = CaptureUtils.load('random_imgs.pkl')
-    cap.show()
+    ### n_rows: number of image shown per row
+    ### ratio: scale of size when showing images
+    cap.show_imgs(ratio=2, n_rows=8)
     ```
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
