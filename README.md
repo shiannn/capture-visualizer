@@ -133,13 +133,11 @@ This is an example of how to list things you need to use the software and how to
 2. capture the figure objects and save the capturer
     ```python
     for i in range(30):
-        A = np.random.rand(5,5)
-        plt.title(i)
-        plt.imshow(A)
-        fig = plt.gcf()
-        # store figure objects
-        cap(fig)
-        plt.close()
+        A = np.random.rand(5,3,32,32) # B,C,H,W shapes
+        titles = [str(np.random.randint(low=0, high=1000)) for _ in range(5)]
+        cap.capture_imgs(A, titles)
+        # titles could also be none
+        # cap.capture_imgs(A)
     cap.save(name='random_imgs.pkl')
     ```
 3. load the capturer when any time when you want to visualize. Images could be displayed in jupyter notebook with the code snippet.
